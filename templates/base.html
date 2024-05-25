@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@^4/dist/full.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/htmx.org@1.7.2"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+    
+    <div class="navbar bg-base-100" style=" position: sticky; top: 0;">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl" href="/">VYNITY</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <details>
+                <summary>
+                  Predictions
+                </summary>
+                <ul class="p-2 bg-base-100 rounded-t-none">
+                  <li><a href="/">Short Term</a></li>
+                  <li><a>Long Term</a></li>
+                  <li><a>Real-Time</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

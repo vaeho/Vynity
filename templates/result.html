@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Forecast Results{% endblock %}
+
+{% block head%}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container" style="margin-left:100px; margin-top:40px;">
+        <h1 style="font-size:40px;">Forecast Result</h1>
+        <div class="mt-3">
+            <div id="plotly-div">{{ plot_html | safe }}</div>
+        </div>
+        <div class="mt-3">
+            <h3 style="font-size:20px; margin-bottom:20px; margin-left:15px;">Forecast Preview</h3>
+            {{ forecast_preview | safe }}
+        </div>
+        <div class="mt-3">
+            <a href="/download/{{ filename }}" class="btn btn-outline btn-primary" style="margin-top: 8px; margin-bottom: 30px;">Download Forecast File</a>
+        </div>
+    </div>
+
+{% endblock %}
