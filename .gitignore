@@ -1,3 +1,4 @@
 uploads/
 outputs/
+static/plots
 run_waitress.py
