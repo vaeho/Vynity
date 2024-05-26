@@ -1,4 +1,4 @@
 uploads/
 outputs/
+_pycache_/
 static/plots
-run_waitress.py

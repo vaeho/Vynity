@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Vynity - Help{% endblock %}
+
+{% block content %}
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content text-center">
+    <div class="max-w-4xl">
+      <h1 class="text-5xl font-bold mb-8">Help</h1>
+      <div class="text-left">
+        <h2 class="text-3xl font-bold mb-4">Prediction Process</h2>
+        <p class="mb-6">Vynity offers two types of predictions for hydro powerplants:</p>
+        <ul class="list-disc ml-8 mb-6">
+          <li><strong>Short-term Predictions:</strong> These predictions are based on recent historical data and provide forecasts for the next 48 hours.</li>
+          <li><strong>Long-term Predictions:</strong> These predictions utilize a more extensive historical dataset and are designed to provide estimates for the next month.</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mb-4">Prediction Process Guide</h3>
+        <ul class="steps steps-vertical mb-6">
+          <li class="step step-primary">Upload an Excel file containing historical hydro powerplant output data.</li>
+          <li class="step step-primary">Select the sheet within the Excel file that contains the relevant data.</li>
+          <li class="step step-primary">Choose the plant or column from the selected sheet for which you want to generate predictions.</li>
+          <li class="step step-primary">View the predicted output for the selected plant in a chart and preview table.</li>
+          <li class="step step-primary">Download the complete prediction results in an Excel file format.</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mb-4">Example Excel File</h3>
+        <p class="mb-6">We've provided an example Excel file that you can download and use for understanding the formatting of the upload file or testing purposes. This file contains sample historical data for multiple hydro powerplants.</p>
+        <a href="/static/Files/Example File.xlsx" class="btn btn-primary text-white" download>Download Example File</a>
+        <div class="dropdown dropdown-hover">
+            <div tabindex="0" role="button" class="btn btn-primary mr-4 text-base-200" style="margin-left: 10px;">Start Predicting</div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-[#040FE6]">
+              <li><a href="/short_term"><b>Short Term Predictions</b></a></li>
+              <li><b><a href="/long_term">Long Term Predictions</a></b></li>
+              </div>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

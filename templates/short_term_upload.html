@@ -3,10 +3,18 @@
 {% block title %}Upload{% endblock %}
 
 {% block content %}
+    <div class="container" style="text-align: center; margin-top: 170px; margin-left:200px;">
 
-    <div class="container" style="text-align: center; margin-top: 200px; margin-left:200px;">
-        <p style="font-size:30px; padding: 30px; text-align: center;">Upload a File</p>
+        <ul class="steps">
+            <li class="step step-primary">Upload</li>
+            <li class="step">Choose Sheet‎ ‎ </li>
+            <li class="step">‎ ‎ Choose Plant</li>
+            <li class="step">Predictions</li>
+          </ul>
+
+        <p style="font-size:30px; padding: 30px; text-align: center;">Upload a File for Short-Term Prediction</p>
         <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="prediction_type" value="short_term">
             <div class="form-group">
                 <input type="file" name="file" class="file-input file-input-bordered file-input-primary w-full max-w-xs">
             </div>

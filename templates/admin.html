@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Admin Page{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Admin Page</h1>
+    {% if not session.get('admin_logged_in') %}
+    <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">Admin Login</h2>
+            <form method="post" action="{{ url_for('admin') }}">
+                <div class="form-control">
+                    <label class="label" for="user">Username</label>
+                    <input type="text" name="user" id="user" class="input input-bordered" required>
+                </div>
+                <div class="form-control mt-4">
+                    <label class="label" for="password">Password</label>
+                    <input type="password" name="password" id="password" class="input input-bordered" required>
+                </div>
+                <div class="mt-6">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="overflow-x-auto">
+        <table class="table table-compact w-full">
+            <thead>
+                <tr>
+                    <th>Leads</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lead in leads %}
+                <tr>
+                    <td>{{ lead }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

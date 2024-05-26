@@ -1,13 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Select plant{% endblock %}
+{% block title %}Select Plant{% endblock %}
 
 {% block content %}
-    <div class="container" style="margin-left:830px; margin-top:200px;">
-        <h1 style="font-size:40px; padding-bottom:10px;">Select plant</h1>
+<div class="container" style="text-align: center; margin-top: 170px; margin-left:200px; display: flex; flex-direction: column; align-items: center;">
+    <ul class="steps">
+      <li class="step step-primary">Upload</li>
+      <li class="step step-primary">Choose Sheet‎ ‎ </li>
+      <li class="step step-primary">‎ ‎ Choose Plant</li>
+      <li class="step">Predictions</li>
+  </ul>
+    <p style="font-size:30px; padding: 20px; text-align: center;">Select Plant</p>
         <form action="/process" method="post">
             <input type="hidden" name="file_path" value="{{ file_path }}">
             <input type="hidden" name="sheet" value="{{ sheet }}">
+            <input type="hidden" name="prediction_type" value="{{ prediction_type }}">
             <div class="mb-4">
               <label for="plant" class="block text-lg font-medium text-gray-700">Plant:</label>
               <select name="plant" id="plant" class="form-select block w-48 rounded-md border border-gray-300 py-2 px-3 text-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
@@ -16,10 +23,8 @@
                         <option value="{{ column }}">{{ column }}</option>
                     {% endif %}
                 {% endfor %}
-              </select>
-            </div>         
+              </select>     
             <button type="submit" class="btn btn-outline btn-primary" style="margin-top: 8px;">Process</button>
         </form>
     </div>
 {% endblock %}
-

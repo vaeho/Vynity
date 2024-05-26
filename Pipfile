@@ -13,3 +13,6 @@ waitress = "*"
 lightgbm = "*"
 
 [dev-packages]
+
+[scripts]
+server = "waitress-serve --listen=127.0.0.1:5000 app:app"

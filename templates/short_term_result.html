@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Forecast Results{% endblock %}
+{% block title %}Results{% endblock %}
 
 {% block head%}
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -9,7 +9,7 @@
 {% block content %}
 
     <div class="container" style="margin-left:100px; margin-top:40px;">
-        <h1 style="font-size:40px;">Forecast Result</h1>
+        <h1 style="font-size:40px;">Short-Term Forecast Results</h1>
         <div class="mt-3">
             <div id="plotly-div">{{ plot_html | safe }}</div>
         </div>

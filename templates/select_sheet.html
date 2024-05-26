@@ -3,19 +3,26 @@
 {% block title %}Select Sheet{% endblock %}
 
 {% block content %}
-    <div class="container" style="margin-left:830px; margin-top:200px;">
-        <h1 style="font-size:40px; padding-bottom:10px;">Select Sheet</h1>
-        <form action="/select_plant" method="post">
-            <input type="hidden" name="file_path" value="{{ file_path }}">
-            <div class="mb-4">
-              <label for="sheet" class="block text-lg font-medium text-gray-700">Sheet:</label>
-              <select name="sheet" id="sheet" class="form-select block w-48 rounded-md border border-gray-300 py-2 px-3 text-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                {% for sheet in sheets %}
-                  <option value="{{ sheet }}">{{ sheet }}</option>
-                {% endfor %}
-              </select>
-            </div>         
-            <button type="submit" class="btn btn-outline btn-primary" style="margin-top: 8px;">Next</button>
-        </form>
+<div class="container" style="text-align: center; margin-top: 170px; margin-left:200px; display: flex; flex-direction: column; align-items: center;">
+  <ul class="steps">
+    <li class="step step-primary">Upload</li>
+    <li class="step step-primary">Choose Sheet‎ ‎ </li>
+    <li class="step">‎ ‎ Choose Plant</li>
+    <li class="step">Predictions</li>
+</ul>
+  <p style="font-size:30px; padding: 20px; text-align: center;">Select Sheet</p>
+  <form action="/select_plant" method="post" style="display: flex; flex-direction: column; align-items: center;">
+    <input type="hidden" name="file_path" value="{{ file_path }}">
+    <input type="hidden" name="prediction_type" value="{{ prediction_type }}">
+    <div class="mb-4" style="text-align: left;">
+      <label for="sheet" class="block text-lg font-medium text-gray-700">Sheet:</label>
+      <select name="sheet" id="sheet" style="width: 200px;" class="form-select block rounded-md border border-gray-300 py-2 px-3 text-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+        {% for sheet in sheets %}
+        <option value="{{ sheet }}">{{ sheet }}</option>
+        {% endfor %}
+      </select>
     </div>
+    <button type="submit" class="btn btn-outline btn-primary">Next</button>
+  </form>
+</div>
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% block title %} Real-Time Forecast {% endblock %}
+
+{% block content %}
+
+<div class="container" style="text-align: center; margin-top: 200px; margin-left:200px; display: flex; flex-direction: column; align-items: center;">
+
+
+    <h1 style="font-size:40px;">Real-Time Forecast</h1>
+    </br>
+    <h2 style="font-size:30px;">Join The Waitlist</h2> </br>
+    <form action="/admin" method="post">
+    <label for="name" class="input input-bordered flex items-center gap-2">
+        Name 
+        <input type="text" name="name" id="name" class="grow" placeholder="Your Name" />
+      </label>
+      <label for="mail" class="input input-bordered flex items-center gap-2">
+        Email
+        <input type="Email" name="mail" id="mail" class="grow" placeholder="mail@example.com" />
+      </label>
+      <button type="submit" class="btn btn-outline btn-primary" style="margin-top: 20px;">Join</button>
+    </form>
+</div>
+{% endblock %}

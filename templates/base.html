@@ -9,29 +9,47 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@^4/dist/full.min.css" rel="stylesheet" />
   <script src="https://unpkg.com/htmx.org@1.7.2"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cofo+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Cofo Sans', sans-serif;
+    }
+
+    .logo {
+      font-family: 'Cofo Sans', sans-serif;
+      font-weight: bold;
+    }
+  </style>
   {% block head %}
   {% endblock %}
 </head>
 <body>
     
-    <div class="navbar bg-base-100" style=" position: sticky; top: 0;">
+    <div class="navbar bg-base-100 text-[#040FE6]" style=" position: sticky; top: 0;">
         <div class="flex-1">
           <a class="btn btn-ghost text-xl" href="/">VYNITY</a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal px-1">
+            <li><a href="/"><b>Home</b></a></li>
             <li>
               <details>
                 <summary>
-                  Predictions
+                  <strong>Predictions</strong>
                 </summary>
                 <ul class="p-2 bg-base-100 rounded-t-none">
-                  <li><a href="/">Short Term</a></li>
-                  <li><a>Long Term</a></li>
-                  <li><a>Real-Time</a></li>
+                  <li><a href="/short_term">Short Term</a></li>
+                  <li><a href="/long_term">Long Term</a></li>
+                  <div class="indicator">
+                    <span class="indicator-item indicator-bottom badge badge-secondary bg-[#040FE6]">Soon</span>
+                    <li><a href="/real_time">Real-Time</a></li>
                 </ul>
               </details>
             </li>
+            <li><strong><a href="/help">Help </a></strong></li>
           </ul>
         </div>
       </div>
