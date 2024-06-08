@@ -11,6 +11,7 @@ plotly = "*"
 scikit-learn = "*"
 waitress = "*"
 lightgbm = "*"
+openpyxl = "*"
 
 [dev-packages]
 
